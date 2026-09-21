@@ -148,6 +148,34 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
 .htitle{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#F3F1EB;letter-spacing:-.01em;}
 .hsub{font-size:12px;color:rgba(255,255,255,.32);margin-top:3px;}
 
+/* HOME */
+.home-screen{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,.7fr);gap:18px;min-height:calc(100vh - 104px);}
+.home-visual{position:relative;min-height:520px;border-radius:22px;overflow:hidden;background:var(--sidebar);box-shadow:0 18px 45px rgba(28,26,21,.14);}
+.home-visual img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.home-caption{position:absolute;left:22px;right:22px;bottom:22px;max-width:430px;padding:20px 22px;border-radius:16px;background:rgba(23,27,25,.88);border:1px solid rgba(255,255,255,.12);color:#F7F5F0;box-shadow:0 12px 28px rgba(0,0,0,.22);}
+.home-caption-kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#DEA05A;margin-bottom:5px;}
+.home-caption-title{font-family:'Montserrat',sans-serif;font-size:27px;font-weight:900;letter-spacing:-.035em;line-height:1.04;}
+.home-caption-sub{font-size:12px;color:rgba(255,255,255,.58);margin-top:7px;}
+.home-caption-mobile{display:none;}
+.home-details{display:flex;flex-direction:column;justify-content:center;gap:14px;}
+.home-project-card{padding:18px 20px;border-radius:15px;background:var(--sidebar);color:#F7F5F0;border:1px solid rgba(255,255,255,.1);box-shadow:0 12px 28px rgba(28,26,21,.12);}
+.home-project-card .home-caption-title{font-size:22px;}
+.home-copy{padding:4px 4px 0;}
+.home-copy h1{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;letter-spacing:-.045em;line-height:1.02;margin:7px 0 11px;}
+.home-copy p{font-size:14px;color:var(--fg2);line-height:1.6;}
+.home-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.home-fact{background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px 14px;min-height:72px;}
+.home-fact strong{display:block;font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;line-height:1.1;}
+.home-fact span{display:block;font-size:10px;color:var(--fg3);margin-top:5px;}
+.home-status{background:var(--sidebar);border-radius:14px;padding:14px 16px;color:#F7F5F0;}
+.home-status-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.home-status-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);font-weight:700;}
+.home-status-phase{font-size:12px;font-weight:600;color:#DEA05A;}
+.home-status-line{height:4px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden;}
+.home-status-line span{display:block;width:34%;height:100%;background:var(--accent);border-radius:4px;}
+.home-cta{width:100%;padding:13px 16px;border:0;border-radius:11px;background:var(--fg);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;text-align:center;transition:transform .16s,background .16s;}
+.home-cta:hover{background:#2A2826;transform:translateY(-1px);}
+
 /* EDITABLE INPUTS (financiación) - plain text style, no border */
 .fin-input{background:transparent;border:none;padding:5px 8px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--fg);text-align:right;-moz-appearance:textfield;cursor:text;border-radius:7px;transition:background .15s;}
 .fin-input::-webkit-outer-spin-button,.fin-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
@@ -225,6 +253,25 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
   .sbox{padding:12px 8px;}
   .hip-grid{grid-template-columns:1fr 1fr;}
   .form-grid3{grid-template-columns:1fr 1fr;}
+  .home-screen{display:block;min-height:0;}
+  .home-visual{min-height:0;height:238px;border-radius:16px;margin-bottom:13px;box-shadow:0 12px 30px rgba(28,26,21,.12);}
+  .home-caption{left:12px;right:12px;bottom:12px;padding:13px 14px;border-radius:12px;}
+  .home-caption-mobile{display:block;}
+  .home-caption-title{font-size:21px;}
+  .home-caption-sub{font-size:11px;margin-top:4px;}
+  .home-details{gap:9px;}
+  .home-project-card{display:none;}
+  .home-copy{padding:0 2px;}
+  .home-copy .eyebrow{margin-bottom:3px;}
+  .home-copy h1{font-size:23px;margin:2px 0 5px;}
+  .home-copy p{font-size:12px;line-height:1.4;}
+  .home-facts{gap:6px;}
+  .home-fact{min-height:56px;padding:9px 11px;border-radius:10px;}
+  .home-fact strong{font-size:14px;}
+  .home-fact span{font-size:9px;margin-top:3px;}
+  .home-status{padding:10px 12px;border-radius:11px;}
+  .home-status-top{margin-bottom:6px;}
+  .home-cta{padding:11px 14px;}
 }
 @media(max-width:420px){
   .g3{grid-template-columns:1fr 1fr;}
@@ -242,7 +289,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
   </div>
   <nav class="sb-nav">
     <div class="nav-item active" data-sec="inicio">
-      <span class="nav-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="currentColor" stroke-width="1.4"/><circle cx="8.5" cy="8.5" r="2" stroke="currentColor" stroke-width="1.4"/></svg></span><span>Inicio</span>
+      <span class="nav-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1.5 8L8.5 2L15.5 8V15H11V10.5H6V15H1.5V8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span>Inicio</span>
+    </div>
+    <div class="nav-item" data-sec="panel">
+      <span class="nav-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="currentColor" stroke-width="1.4"/><circle cx="8.5" cy="8.5" r="2" stroke="currentColor" stroke-width="1.4"/></svg></span><span>Panel de Control</span>
     </div>
     <div class="nav-item" data-sec="vivienda">
       <span class="nav-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1.5 8L8.5 2L15.5 8V15H11V10.5H6V15H1.5V8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span>Vivienda</span>
@@ -293,9 +343,46 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
 
     <!-- ═══ INICIO ═══ -->
     <div class="section active" id="sec-inicio">
+      <div class="home-screen">
+        <div class="home-visual">
+          <img src="assets/don-pelayo-interior.webp" alt="Salón moderno en blanco y negro, inspiración para la reforma de Don Pelayo">
+          <div class="home-caption home-caption-mobile">
+            <div class="home-caption-kicker">Residencial Don Pelayo</div>
+            <div class="home-caption-title">Donde empieza la libertad</div>
+            <div class="home-caption-sub">Vivienda 2ºE · Fuensalida, Toledo</div>
+          </div>
+        </div>
+        <div class="home-details">
+          <div class="home-project-card">
+            <div class="home-caption-kicker">Residencial Don Pelayo</div>
+            <div class="home-caption-title">Donde empieza la libertad</div>
+            <div class="home-caption-sub">Vivienda 2ºE · Fuensalida, Toledo</div>
+          </div>
+          <div class="home-copy">
+            <div class="eyebrow">Compra + reforma · 2026</div>
+            <h1>Una casa para empezar.</h1>
+            <p>El proyecto para comprar, preparar y amueblar la nueva vivienda de Alejandro, coordinando financiación, trámites, obra y equipamiento.</p>
+          </div>
+          <div class="home-facts">
+            <div class="home-fact"><strong>52,17 m²</strong><span>superficie útil</span></div>
+            <div class="home-fact"><strong>2 dormitorios</strong><span>más garaje y trastero</span></div>
+            <div class="home-fact"><strong>115.011 €</strong><span>precio total vivienda</span></div>
+            <div class="home-fact"><strong>Julio 2026</strong><span>entrega prevista</span></div>
+          </div>
+          <div class="home-status">
+            <div class="home-status-top"><span class="home-status-label">Fase actual</span><span class="home-status-phase">Compra y financiación</span></div>
+            <div class="home-status-line"><span></span></div>
+          </div>
+          <button class="home-cta" type="button" onclick="gotoSec('panel')">Abrir Panel de Control</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PANEL DE CONTROL ═══ -->
+    <div class="section" id="sec-panel">
       <div class="sheader">
         <div class="eyebrow">Proyecto Vivienda · Alejandro, 24 años</div>
-        <div class="stitle">Panel de<br>Control</div>
+        <div class="stitle">Panel de Control</div>
         <div class="ssub">Residencial Don Pelayo · 2ºE · Fuensalida, Toledo</div>
       </div>
       <div id="inicio-alert"></div>
@@ -338,7 +425,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
     <div class="section" id="sec-vivienda">
       <div class="sheader">
         <div class="eyebrow">Residencial Don Pelayo</div>
-        <div class="stitle">Vivienda<br>2ºE</div>
+        <div class="stitle">Vivienda 2ºE</div>
         <div class="ssub">52,17 m² útiles · 2 dormitorios · 1 baño · Parking 17 · Trastero 2</div>
       </div>
       <div class="g4">
@@ -1170,7 +1257,7 @@ function renderTram(){
 }
 
 // ── NAVIGATION ─────────────────────────────────────────────────────────────────
-const STIT={inicio:'Inicio',vivienda:'Vivienda',financiacion:'Financiación',hipotecas:'Hipotecas',compras:'Compras',planning:'Planning',tramites:'Trámites',ayuda:'Ayuda',about:'About'};
+const STIT={inicio:'Inicio',panel:'Panel de Control',vivienda:'Vivienda',financiacion:'Financiación',hipotecas:'Hipotecas',compras:'Compras',planning:'Planning',tramites:'Trámites',ayuda:'Ayuda',about:'About'};
 
 function gotoSec(sec){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));

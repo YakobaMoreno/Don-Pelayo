@@ -396,7 +396,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
       </div>
       <!-- 3 stats: precio vivienda | necesario muebles | disponible muebles -->
       <div class="g3">
-        <div class="sbox"><div class="sv">115.010 €</div><div class="sl">precio vivienda (IVA incl.)</div></div>
+        <div class="sbox"><div class="sv">115.011 €</div><div class="sl">compra con IVA · redondeado</div></div>
         <div class="sbox"><div class="sv" id="i-muebles-total" style="color:var(--accent)">—</div><div class="sl">necesario para muebles</div></div>
         <div class="sbox"><div class="sv" id="i-muebles-disp" style="color:var(--ok)">—</div><div class="sl" id="i-muebles-disp-l">disponible para muebles</div></div>
       </div>
@@ -472,13 +472,13 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
       <div class="card al" style="padding:14px 18px">
         <div class="ctitle">⚙️ Parámetros editables</div>
         <div class="fin-row">
-          <span>Precio total vivienda (IVA incluido)</span>
-          <span class="fin-fixed">115.011 €</span>
+          <span>Base financiable: vivienda y anexos, sin IVA</span>
+          <span class="fin-fixed">104.555 €</span>
         </div>
         <div class="fin-row">
-          <span>% que financia el banco</span>
+          <span>% que financia el banco sobre el neto</span>
           <div class="fin-val">
-            <input class="fin-input" id="inp-pct" type="number" value="100" min="50" max="110" step="0.5" style="width:70px" oninput="updateAllDynamics()">
+            <input class="fin-input" id="inp-pct" type="number" value="80" min="50" max="110" step="0.5" style="width:70px" oninput="updateAllDynamics()">
             <span>%</span>
           </div>
         </div>
@@ -512,20 +512,23 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
       <!-- PRECIO DE COMPRA -->
       <div class="div">Precio de compra</div>
       <div class="card">
-        <div class="dr"><span>Vivienda 2ºE</span><span class="drv">102.911 €</span></div>
-        <div class="dr"><span>Garaje nº 17</span><span class="drv">8.250 €</span></div>
-        <div class="dr"><span>Trastero nº 2</span><span class="drv">3.850 €</span></div>
-        <div class="dr tot bold"><span>Total (IVA 10% incluido)</span><span class="drv">115.011 €</span></div>
+        <div class="dr"><span>Vivienda 2ºE · sin IVA</span><span class="drv">93.555 €</span></div>
+        <div class="dr"><span>Garaje 17 + trastero 2 · sin IVA</span><span class="drv">11.000 €</span></div>
+        <div class="dr bold"><span>Total neto financiable</span><span class="drv">104.555 €</span></div>
+        <div class="dr"><span>IVA de compra · 10% · no financiado</span><span class="drv">10.455,50 €</span></div>
+        <div class="dr tot bold"><span>Total compra con IVA</span><span class="drv">115.010,50 €</span></div>
       </div>
 
       <!-- PAGOS AL PROMOTOR -->
-      <div class="div">Pagos al promotor</div>
+      <div class="div">Pagos al promotor · IVA incluido</div>
       <div class="card">
         <div class="dr"><span><span class="badge bok" style="margin-right:6px">✓</span>Reserva</span><span class="drv">3.000 €</span></div>
         <div class="dr"><span><span class="badge bok" style="margin-right:6px">✓</span>Contrato (15% − reserva)</span><span class="drv">14.252 €</span></div>
         <div class="dr"><span><span class="badge bok" style="margin-right:6px">✓</span>Durante obra (15% recibos)</span><span class="drv">17.252 €</span></div>
+        <div class="dr bold"><span>Total ya abonado, con IVA</span><span class="drv">34.504 €</span></div>
         <div class="dr bold"><span><span class="badge bwarn" style="margin-right:6px">Hito 0</span>Escrituras — 70%</span><span class="drv">80.507 €</span></div>
       </div>
+      <div class="alert ainfo">Los anticipos ya incluyen IVA. El saldo de escrituras del promotor (80.507 €, redondeado) también lo incluye: no se suma otra vez. IVA restante según su desglose: 7.318,85 €. La diferencia con total menos anticipos es de 0,50 € por redondeos y deberá conciliarse en la liquidación final. La financiación calcula el porcentaje sobre 104.555 € netos; su disponibilidad efectiva depende del desembolso del banco.</div>
 
       <!-- DEUDAS -->
       <div class="div">Deudas a cancelar el día de escrituras</div>
@@ -664,7 +667,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
         <div style="font-size:13px;color:var(--fg2);line-height:1.8">Toca cualquier tarea para marcarla completada. Las urgentes aparecen en rojo en el Panel de Control. Los trámites con 🔒 solo se activan tras la firma de escrituras.</div>
       </div>
       <div class="card" style="background:var(--info-bg);border-color:var(--info)">
-        <div style="font-size:13px;color:var(--info);line-height:1.8">💡 <strong>Sincronización</strong>: los cambios se guardan automáticamente. Si compartes el enlace del artefacto de Claude con Alejandro, ambos veis el mismo estado en tiempo real.</div>
+        <div style="font-size:13px;color:var(--info);line-height:1.8">💡 <strong>Guardado local</strong>: los cambios se guardan automáticamente en este navegador. Todavía no se sincronizan entre dispositivos. Esta actualización establece una vez la financiación al 80% del neto en cada dispositivo, conservando las compras y tareas guardadas.</div>
       </div>
     </div>
 
@@ -683,7 +686,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
         <div style="font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;">Diseñado con</div>
         <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--fg);margin-bottom:24px;">Codex · OpenAI</div>
         <div style="height:1px;background:var(--border);margin-bottom:20px;"></div>
-        <div style="display:inline-block;padding:6px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--border);font-size:12px;color:var(--fg2);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.02em;">v3.0 · Septiembre 2026</div>
+        <div style="display:inline-block;padding:6px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--border);font-size:12px;color:var(--fg2);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.02em;">v3.1 · 25 octubre 2026</div>
       </div>
       <div class="card" style="text-align:center;padding:18px 20px;background:var(--sidebar);">
         <div style="font-size:11px;color:rgba(255,255,255,.3);line-height:2;">
@@ -699,7 +702,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);display:flex;gap:var(--she
 
 <script>
 // ── CONSTANTS ─────────────────────────────────────────────────────────────────
-const PRECIO_VIVIENDA = 115011;
+const PRECIO_VIVIENDA = 104555; // base financiable sin IVA: vivienda + anexos
 const DEUDAS_FIJAS    = 80507 + 14000 + 16000; // escrituras + crédito padre + préstamos
 
 // ── STORAGE KEYS ──────────────────────────────────────────────────────────────
@@ -844,6 +847,12 @@ async function sSet(k,v){
 async function load(){
   try{const r=await sGet(SK);if(r)ST=JSON.parse(r);}catch(e){ST={};}
   try{const r=await sGet(SK_HIP);if(r)HIPS=JSON.parse(r);else HIPS=[...DEFAULT_HIPS];}catch(e){HIPS=[...DEFAULT_HIPS];}
+  // Aplicar una sola vez la nueva condición del banco, preservando el resto de datos.
+  if(ST.fin_revision!=='neto-80-2026-10-25'){
+    ST.fin_pct=80;
+    ST.fin_revision='neto-80-2026-10-25';
+    await sSet(SK,JSON.stringify(ST));
+  }
   // Restore param inputs
   if(ST['fin_pct']){const e=document.getElementById('inp-pct');if(e)e.value=ST['fin_pct'];}
   if(ST['gastos_hipo']){const e=document.getElementById('inp-gastos');if(e)e.value=ST['gastos_hipo'];}
@@ -880,7 +889,7 @@ const pct  = (a,b) => b>0?Math.min(100,Math.round(a/b*100)):0;
 const $    = id => document.getElementById(id);
 
 function getPct(){
-  const e=$('inp-pct'); return e?parseFloat(e.value)||100:parseFloat(ST['fin_pct'])||100;
+  const e=$('inp-pct'); return e?parseFloat(e.value)||80:parseFloat(ST['fin_pct'])||80;
 }
 function getGastos(){
   const e=$('inp-gastos'); return e?parseFloat(e.value)||2500:parseFloat(ST['gastos_hipo'])||2500;
@@ -914,7 +923,7 @@ function calcTotalNecesario(){return DEUDAS_FIJAS+shopTotalBudget()+getGastos();
 function updateAllDynamics(){
   // Save editable params
   const pctEl=$('inp-pct');const gasEl=$('inp-gastos');
-  if(pctEl)ST['fin_pct']=parseFloat(pctEl.value)||100;
+  if(pctEl)ST['fin_pct']=parseFloat(pctEl.value)||80;
   if(gasEl)ST['gastos_hipo']=parseFloat(gasEl.value)||2500;
   save();
 
